@@ -2,16 +2,14 @@
 
 {% block content %}
 
-    <h2>Вход для зарегистрованных пользователей (для регистрации обратитесь к администратору):</h2>
-    {% if form.errors %}
-        <p>Имя и пароль не совпадают!</p>
-    {% endif %}
+    <h2>Вход (для регистрации обратитесь к администратору):</h2>
 
-    <form action="{% url 'login' %}" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" class="btn btn-primary" value="Войти">
-        <input type="hidden" name="next" value="{{next}}">
-    </form>
-
+    <div class="jumbotron">
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="btn btn-primary" value="Войти">
+            <input type="hidden" name="next" value="{{next}}">
+        </form>
+    </div>
 {% endblock %}
