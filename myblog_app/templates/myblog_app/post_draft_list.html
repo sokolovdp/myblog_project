@@ -1,0 +1,12 @@
+{% extends 'myblog_app/base.html' %}
+
+{% block content %}
+    <h1>Черновики записей</h1>
+    {% for post in posts %}
+        <div class="post">
+            <p class="date">Создан: {{ post.create_date|date: 'd-m-Y'  }}</p>
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h2>
+            <p>{{post.text|truncatechars:100}}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
