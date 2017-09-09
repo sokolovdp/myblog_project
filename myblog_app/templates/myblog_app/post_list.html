@@ -9,7 +9,7 @@
             <div class="date">
                 <p>Опубликовано: {{post.published|date:"D M Y"}}</p>
             </div>
-        <a href="{% url 'post_detail' %} pk=post.pk %}">Комментарии: {{post.approve_comments.count}}</a>
+        <a href="{% url 'post_detail' pk=post.pk %}">Комментарии: {{post.approve_comments.count}}</a>
         {% endfor %}
     </div>
 {% endblock %}

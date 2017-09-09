@@ -22,7 +22,7 @@ class Post(models.Model):
         return reverse("post_detail", kwargs={'pk': self.pk})
 
     def __str__(self):
-        return self.author + ' : ' + self.title
+        return str(self.author) + ' : ' + str(self.title)
 
 
 class Comment(models.Model):
@@ -40,4 +40,4 @@ class Comment(models.Model):
         return reverse("post_list")
 
     def __str__(self):
-        return self.author + ' : ' + self.create_date
+        return str(self.author) + ' : ' + str(self.create_date)

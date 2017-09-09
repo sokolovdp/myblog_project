@@ -4,8 +4,8 @@
     <h1>Стереть запись</h1>
         <form>
            {% csrf_token %}
-            <p>Уверен, что надо стереть {{ object }}?</p>
-            <button class="btn btn-danger" type="submit" value="Да"></button>
+            <p>Уверен, что надо стереть {{ post }}?</p>
+            <button class="btn btn-danger" type="submit">Да</button>
         </form>
-
+        <a href="{% url 'post_detail' pk=post.pk%}">Вернуться</a>
 {% endblock %}

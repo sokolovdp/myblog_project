@@ -37,12 +37,12 @@
 
         <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
-                <li><a href="{% url 'post_new' %}">Новая запись</a></li>
-                <li><a href="{% url 'post_draft_list' %}">Черновики</a></li>
-                <li><a href="#">Благородный дон: {{user.username}}</a></li>
+                <li><a href="{% url 'post_new' %}"><span class="glyphicon glyphicon-pencil"></span></a></li>
+                <li><a href="{% url 'post_draft_list' %}"><span class="glyphicon glyphicon-folder-open"></span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> {{user.username}}</a></li>
                 <li><a href="{% url 'logout' %}">Выйти</a></li>
             {% else %}
-                <li>  <a href="{% url 'login' %}"> <span class="glyphicon glyphicon-user" > </span> </a>  </li>
+                <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-user"></span></a></li>
             {%  endif %}
         </ul>
     </div>
