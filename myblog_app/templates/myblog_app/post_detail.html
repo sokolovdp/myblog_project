@@ -4,7 +4,7 @@
     <h1 class="posttitle loader">{{post.title}}</h1>
     {% if post.published_date %}
         <div class="date postdate">
-            {{ post.published_date }}
+            {{ post.published_date|date:"d-m-Y" }}
         </div>
     {% else %}
         <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Опубликовать</a>
